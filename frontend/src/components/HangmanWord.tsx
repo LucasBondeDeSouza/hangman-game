@@ -1,3 +1,5 @@
+type HangmanWordProps = {}
+
 const HangmanWord = () => {
     const word = "test"
     const guessedLetters = ["t", "e", "g"]
