@@ -11,10 +11,13 @@ export default () => {
   const [guessedLetters, setGuessedLetters] = useState([])
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
+    <div className="max-w-[800px] my-8 mx-auto px-2 flex flex-col justify-center items-center">
       <HangmanDrawing />
       <HangmanWord />
-      <Keyboard />
+
+      <div className="self-stretch">
+        <Keyboard />
+      </div>
     </div>
   )
 }
