@@ -38,7 +38,7 @@ export default () => {
                 return (
                     <button 
                         key={key}
-                        className={"w-full border-2 border-black aspect-square text-4xl uppercase p-2 font-bold cursor-pointer hover:bg-blue-500 hover:text-white"}
+                        className={`w-full border-2 border-black aspect-square text-4xl uppercase p-2 font-bold cursor-pointer hover:bg-blue-500 hover:text-white`}
                     >
                         {key}
                     </button>
