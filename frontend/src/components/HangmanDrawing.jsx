@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => {
+export default ({ numberOfGuesses }) => {
     const HEAD = (
         <div className="
             size-[40px] sm:size-[50px] 
@@ -68,14 +68,11 @@ export default () => {
         " />
     );
 
+    const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
+
     return (
         <div className="relative">
-            {HEAD}
-            {BODY}
-            {RIGHT_ARM}
-            {LEFT_ARM}
-            {RIGHT_LEG}
-            {LEFT_LEG}
+            {BODY_PARTS.slice(0, numberOfGuesses)}
 
             {/* Estrutura da forca */}
             <div className="h-[40px] sm:h-[50px] w-[8px] sm:w-[10px] bg-black absolute top-0 right-0"></div>

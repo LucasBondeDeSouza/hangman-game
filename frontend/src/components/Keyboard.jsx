@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default () => {
+export default ({ disabled = false, activeLetters, inactiveLetters, addGuessedLetter }) => {
     const KEYS = [
         "a",
         "b",
@@ -29,16 +29,19 @@ export default () => {
         "y",
         "z",
     ]
-    const [active, setActive] = useState(false)
-    const [inactive, setInactive] = useState(false)
 
     return (
         <div className="mt-10 grid grid-cols-[repeat(auto-fit,minmax(75px,1fr))] gap-2">
             {KEYS.map(key => {
+                const isActive = activeLetters.includes(key)
+                const isInactive = inactiveLetters.includes(key)
                 return (
                     <button 
+                        onClick={() => addGuessedLetter(key)}
                         key={key}
-                        className={`w-full border-2 border-black aspect-square text-4xl uppercase p-2 font-bold cursor-pointer hover:bg-blue-500 hover:text-white`}
+                        className={`w-full border-2 border-black aspect-square text-4xl uppercase p-2 font-bold cursor-pointer hover:bg-blue-500 hover:text-white
+                        ${isActive && 'bg-blue-500 text-white'} ${isInactive && 'opacity-[.3]'}`}
+                        disabled={isInactive || isActive || disabled}
                     >
                         {key}
                     </button>
