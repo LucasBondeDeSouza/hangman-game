@@ -3,7 +3,7 @@ import React from "react";
 export default ({ reveal = false, guessedLetters, wordToGuess, isWinner }) => {
     
     return (
-        <div className="mt-10 flex gap-5 text-5xl sm:text-7xl font-bold uppercase">
+        <div className="mt-10 flex flex-wrap gap-5 text-5xl sm:text-7xl font-bold uppercase">
             {wordToGuess.split("").map((letter, index) => (
                 <span
                     key={index}
